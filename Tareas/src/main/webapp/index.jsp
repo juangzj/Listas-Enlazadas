@@ -12,7 +12,7 @@
                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
                             <div class="card-body p-4 p-lg-5 text-black">
 
-                                <form>
+                                <form action="SvTarea" method="POST" >
 
                                     <div class="d-flex align-items-center mb-3 pb-1">
                                         <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -36,7 +36,7 @@
                                     </div>
 
                                     <a class="small text-muted" href="#!"></a>
-                                    <p class="mb-5 pb-lg-2 " style="color: #393f81;"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    <p class="mb-5 pb-lg-2 " style="color: #393f81;"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" 
                                                                                         style="color: #393f81;" >Registrate aqui</a></p>
                                     <a href="#!" class="small text-muted">Terminos de uso.</a>
                                     <a href="#!" class="small text-muted">Politica de privacidad</a>
@@ -61,7 +61,7 @@
             </div>
             <div class="modal-body">
                 <div id="tarea-details">
-                    <form action="SvPerro" method="POST" enctype="multipart/form-data" > 
+                    <form action="SvTarea" method="POST" enctype="multipart/form-data" > 
                         <!-- Input para el nombre-->
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="nombre">Nombre:</label>
@@ -91,35 +91,32 @@
 <script>
 
     // funcion para mostrar los datos en la ventana modal
-    $('#exampleModal').on('show.bs.modal',.submit(function (event)) {
-        event.preventDefault(); // Prevenir la recarga de la página
-       
+    $('#exampleModal').on('show.bs.modal',.submit(function (event)){
+    //event.preventDefault(); // Prevenir la recarga de la página
+
 // Obtener los valores de los campos del formulario
-    var nombre = $('#nombre').val();
-    var cedula = $('#cedula').val();
-    var contrasenia = $('#contrasenia').val();
-        // Realiza una solicitud AJAX al servlet para obtener los detalles del perro por su nombre
-        $.ajax({
-        url: 'SvTarea', 
-        method: 'POST', // Utiliza POST para enviar datos confidenciales
-        data: {
-            nombre: nombre,
-            cedula: cedula,
-            contrasena: contrasenia
-        },
-        success: function (data) {
+    var nombre = $('#nombre');
+    var cedula = $('#cedula');
+    var contrasenia = $('#contrasenia');
+    // Realiza una solicitud AJAX al servlet para obtener los detalles del perro por su nombre
+    $.ajax({
+    url: 'SvTarea',
+            method: 'POST', // Utiliza POST para enviar datos confidenciales
+            data: {
+                    nombre: nombre,
+                    cedula: cedula,
+                    contrasenia: contrasenia
+            },
+            success: function (data) {
             // Maneja la respuesta del servidor aquí (puede ser un mensaje de éxito o redirección)
             console.log('Registro exitoso:', data);
-        },
-        error: function () {
+            },
+            error: function () {
             // Maneja errores aquí si es necesario
             console.log('Error en el registro de usuario.');
-        }
+            }
     });
-});
-
-
-
-
+    }
+    );
 </script>
 <%@include file="Templates/Footer.jsp" %>                                                                                        
