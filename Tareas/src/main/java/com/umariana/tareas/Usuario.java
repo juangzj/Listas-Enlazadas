@@ -24,8 +24,8 @@ public class Usuario {
      * @param contraseña
      */
     public Usuario(String nomUsuario, String cedula, String contraseña) {
-        this.nomUsuario = nomUsuario;
         this.cedula = cedula;
+        this.nomUsuario = nomUsuario;
         this.contraseña = contraseña;
     }
 

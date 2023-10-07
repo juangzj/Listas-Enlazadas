@@ -32,11 +32,11 @@ public class SvTarea extends HttpServlet {
         processRequest(request, response);
         
         //obtener los parametros para el registro de un nuevo usuario
-        String nombre = request.getParameter("nombre");
+        String usuario = request.getParameter("usuario");
         String cedula = request.getParameter("cedula");
         String contrasenia = request.getParameter("contrasenia");
         
-        System.out.println("Nombre: " + nombre);
+        System.out.println("Nombre: " + usuario);
         System.out.println("Cedula: " + cedula);
         System.out.println("Contraseña: " + contrasenia);
         

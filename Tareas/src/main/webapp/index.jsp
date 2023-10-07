@@ -64,24 +64,25 @@
                     <form action="SvTarea" method="POST" enctype="multipart/form-data" > 
                         <!-- Input para el nombre-->
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="nombre">Nombre:</label>
-                            <input type="text" name ="nombre" class="form-control">
+                            <label class="input-group-text" for="usuario">Usuario:</label>
+                            <input type="text" name ="usuario" id="usuario" class="form-control">
                         </div>    
                         <!-- Input para cedula-->
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="cedula">Cedula:</label>
-                            <input type="text" name ="cedula" class="form-control">
+                            <input type="text" name ="cedula"  id="cedula" class="form-control">
                         </div> 
                         <!-- Input para contraseña-->
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="contrasenia">Contraseña:</label>
-                            <input type="password" name ="contrasenia" class="form-control">
+                            <input type="password" name ="contrasenia" id="contrasenia" class="form-control">
                         </div>    
-                        <!-- Boton para agregar perros --> 
+                        <!-- Boton para crear un nuevo usuario --> 
                         <input type="submit" value="Crear usuario" class ="form-control"/>
                     </form>
                 </div>
             </div>
+            <!-- Boton para cerrar el modal -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
@@ -89,34 +90,35 @@
     </div>
 </div>
 <script>
+    //modal para crear un nuevo usuario
+    $('#exampleModal').submit(function (event) {
+        event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
 
-    // funcion para mostrar los datos en la ventana modal
-    $('#exampleModal').on('show.bs.modal',.submit(function (event)){
-    //event.preventDefault(); // Prevenir la recarga de la página
+        // Obtener los valores de los campos del formulario
+        var usuario = $('#usuario').val();
+        var cedula = $('#cedula').val();
+        var contrasenia = $('#contrasenia').val();
 
-// Obtener los valores de los campos del formulario
-    var nombre = $('#nombre');
-    var cedula = $('#cedula');
-    var contrasenia = $('#contrasenia');
-    // Realiza una solicitud AJAX al servlet para obtener los detalles del perro por su nombre
-    $.ajax({
-    url: 'SvTarea',
-            method: 'POST', // Utiliza POST para enviar datos confidenciales
+        // Realizar una solicitud AJAX 
+        $.ajax({
+            url: 'SvTarea',
+            method: 'POST', // Utilizar POST para enviar datos confidenciales
             data: {
-                    nombre: nombre,
-                    cedula: cedula,
-                    contrasenia: contrasenia
+                usuario: usuario,
+                cedula: cedula,
+                contrasenia: contrasenia
             },
             success: function (data) {
-            // Maneja la respuesta del servidor aquí (puede ser un mensaje de éxito o redirección)
-            console.log('Registro exitoso:', data);
+
+                console.log('Registro exitoso:', data);
             },
             error: function () {
-            // Maneja errores aquí si es necesario
-            console.log('Error en el registro de usuario.');
+
+                console.log('Error en el registro de usuario.');
             }
+        });
     });
-    }
-    );
 </script>
+
+
 <%@include file="Templates/Footer.jsp" %>                                                                                        
