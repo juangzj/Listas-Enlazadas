@@ -22,17 +22,17 @@
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Ingresa a tu cuenta</h5>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example17">Usuario</label>
+                                        <input type="text"  name="usuarioR" class="form-control form-control-lg" />
+                                        <label class="form-label" for="usuarioR">Usuario</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form2Example27">Contraseña</label>
+                                        <input type="password" name="contraseniaR" class="form-control form-control-lg" />
+                                        <label class="form-label" for="contraseniaR">Contraseña</label>
                                     </div>
 
                                     <div class="pt-1 mb-4">
-                                        <button class="btn btn-dark btn-lg btn-block" type="button">Iniciar sesion</button>
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit" >Iniciar sesion</button>
                                     </div>
 
                                     <a class="small text-muted" href="#!"></a>
@@ -78,7 +78,7 @@
                             <input type="password" name ="contrasenia" id="contrasenia" class="form-control">
                         </div>    
                         <!-- Boton para crear un nuevo usuario --> 
-                        <input type="submit" value="Crear usuario" class ="form-control"/>
+                        <input   type="submit" value="Crear usuario"  class ="form-control"/>
                     </form>
                 </div>
             </div>
