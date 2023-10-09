@@ -8,7 +8,7 @@ public class Usuario {
 
     private String nomUsuario;
     private String cedula;
-    private String contraseña;
+    private String contrasenia;
 
     /**
      * constructor vacio
@@ -21,12 +21,12 @@ public class Usuario {
      *
      * @param nomUsuario
      * @param cedula
-     * @param contraseña
+     * @param contrasenia
      */
-    public Usuario(String nomUsuario, String cedula, String contraseña) {
+    public Usuario(String nomUsuario, String cedula, String contrasenia) {
         this.cedula = cedula;
         this.nomUsuario = nomUsuario;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
     }
 
     /**
@@ -50,12 +50,12 @@ public class Usuario {
         this.cedula = cedula;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
 }

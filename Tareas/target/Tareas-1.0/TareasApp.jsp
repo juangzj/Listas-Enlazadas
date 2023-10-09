@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <h1>Ingreso a la plataforma exitoso</h1>
     <body>
         
     </body>
